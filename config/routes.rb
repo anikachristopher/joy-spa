@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root 'sessions#index'
   get '/signup' => 'clients#new'
   get '/login' => 'sessions#new'
