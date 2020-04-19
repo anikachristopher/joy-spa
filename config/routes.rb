@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :appointments
   resources :services
   root 'sessions#index'
-  get '/signup' => 'clients#new'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  get '/signup', to: "clients#new"
+  get '/login' to: "sessions#new"
+  post '/login' to: "sessions#create"
+  delete '/logout' to: "sessions#destroy"
 
   resources :clients
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

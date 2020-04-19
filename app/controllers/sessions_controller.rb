@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
 
+    def index
+    end
+    
     def new
         @client = Client.new
         render :login
