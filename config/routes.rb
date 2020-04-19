@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :appointments
   resources :services
   root 'sessions#index'
   get '/signup' => 'clients#new'
