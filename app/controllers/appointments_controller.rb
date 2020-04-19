@@ -15,9 +15,13 @@ class AppointmentsController < ApplicationController
     end
 
     def edit
+        @appointment = Appointment.find(params[:id])
     end
 
     def update
+        @appointment = current_client.appointments.find_by(id: params[:id])
+        @appointment.update(appointment_params)
+        redirect_to appointment_path(@appointment)
     end
 
     def show
@@ -30,5 +34,5 @@ class AppointmentsController < ApplicationController
 
     def appointment_params
     end
-    
+
 end
