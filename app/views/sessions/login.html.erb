@@ -1,13 +1,13 @@
 <h1> Log In </h1>
 
-<%= form_for (@client), url: '/login' do |i| %>
+<%= form_for (@client), url: '/login' do |f| %>
 
     <%= f.label :email %>
     <%= f.email_field :email %>
     <br>
     <%= f.label :password%>
     <%= f.password_field :password %>
-    <br>
+    <br><br>
     <%= f.submit "Log In" %>
     <br>
 <% end %>

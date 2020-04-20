@@ -25,6 +25,8 @@ class AppointmentsController < ApplicationController
     end
 
     def show
+        @appointment = Appointment.find(params[:id])
+        @rating = Rating.find_by(appointment_id: @appointment.id)
     end
 
     def destroy

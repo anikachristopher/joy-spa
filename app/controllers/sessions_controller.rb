@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
     def index
     end
-    
+
     def new
         @client = Client.new
         render :login
@@ -12,9 +12,9 @@ class SessionsController < ApplicationController
         @client = Client.find_by(email: params[:client][:email])
         if @client && @client.authenticate(params[:client][:password])
             session[:client_id] = @client.id
-            redirect_to  @client
+            redirect_to  client_path
         else
-            redirect_to 'login'
+            redirect_to login_path
         end
     end
 

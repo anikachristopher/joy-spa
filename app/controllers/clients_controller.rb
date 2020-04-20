@@ -1,5 +1,8 @@
 class ClientsController < ApplicationController
 
+    def index
+    end
+
     def new
         @client = Client.new
     end
@@ -11,6 +14,9 @@ class ClientsController < ApplicationController
             redirect_to @client
         else
             render :new
+
+    def show
+        @client = Client.find(params[:id])
     end
     
     private
